@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import styled from "styled-components";
+import Body from './Human/Body';
+import Horizon from './Horizon/index';
+import Grass from './Horizon/Grass'
+
+const Container = styled.div`
+   width: 200px;
+   height: 300px ;
+   position: relative;
+   align-self: center;
+`;
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Container>
+                <Body/>
+            </Container>
+            <Horizon/>
+
+        </div>
+    );
 }
 
 export default App;
