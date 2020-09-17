@@ -15,9 +15,7 @@ const Container = styled.div`
 function App() {
     return (
         <div className="App">
-            <Container>
                 <Body/>
-            </Container>
             <Horizon/>
 
         </div>

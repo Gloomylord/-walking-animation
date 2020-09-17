@@ -1,86 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
+import './styles.css';
 
-let bodyColor = '#faef97';
-let shortsColor = '#0f53a6';
-let shirtColor = '#c22eff';
-const Container = styled.div`
-  display: grid;
-  position: absolute;
-  top: 0;
-  left: 0;
-`;
-
-const Smile = styled.div`
-    background: ${bodyColor};
-    z-index: 101;
-    width: 170px;
-    height: 200px;
-    transform: rotate(-10deg);
-    border-radius: 50%;
-    display: grid;
-    box-sizing: border-box;
-    border: 2px solid #e2aa48;
-    grid-area: 1/1/2/2;
-    grid-template-columns: repeat(7,1fr);
-    grid-template-rows: repeat(6,1fr) ;
-    overflow: hidden;
-    align-self: start;
-    justify-self: center;
-    > div {
-        border-width: 3px  0;
-        height: 100%;
-        background: azure;
-        border:  solid #e2aa48;
-        border-width: 3px  0;
-        border-radius: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        animation: eye-1 1s ease-in infinite alternate;
-        animation-delay: 1s;
-        align-self: center;
-        > div {
-          width: 14px;
-          height: 14px;
-          background: #060c06;
-          align-self: center;
-          border-radius: 50%;
-          position: relative;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;        
-          animation: eye-2 3s ease-in-out infinite alternate;
-          animation-delay: 1s;
-          > div {
-              animation-delay: 1s;
-              top: -2px;
-              left: 2px;
-              position: relative;
-              width: 3px;
-              height: 3px;
-              background: #e5e5e5;
-              align-self: center;
-              border-radius: 50%;
-          }
-        }
-    }
-    .left {
-      grid-area: 3/3/4/4;
-    }
-    .right {
-      grid-area: 3/5/4/6;
-    }
-    .mouth {
-      background: rgba(255,211,199,0);
-      border: solid #db9442;
-      border-top: 0;
-      grid-area: 5/3/6/6;
-      position: relative;
-      animation: mouth 1s ease-in infinite alternate;
-    }
-    
-`;
 const Main = styled.div`
     box-sizing: border-box;
     padding: 0;
@@ -88,325 +9,83 @@ const Main = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: start;
-`;
-
-const Decoration = styled.div`
-    display: flex;
-    flex-direction: column;
-    text-align: left; 
-    > div {
-      background: ${bodyColor};
-      width: 30px;
-      border: 0;
-      border-radius: 50px;
-      position: absolute;
-    }
-    .foot {
-      height:150px;
-      transform-origin: 50% 15px;
-      width: 30px;
-      border: 0;
-      border-radius: 50px;
-      position: absolute;
-      z-index: 10;
-    }
-    .arm {
-      height:100px;
-      transform-origin: 50% 15px;
-      width: 30px;
-      border: 0;
-      border-radius: 50px;
-      position: absolute;
-      z-index: 10;
-    }
-    .body {
-      height:230px;
-      width: 80px;
-      top: 180px;
-      left: 50px;
-      display: flex;
-      z-index: 100;
-      flex-direction: column;
-      justify-content: space-between;
-      box-sizing: border-box;
-      > div {
-        align-self: center;
-        position: relative;
-      }
-      > :nth-child(2){
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        height: 30%;
-        width: 100%;
-        border-radius: 0 0 50px 50px;
-        border-top: 2px solid #373737 ;
-        background-color: ${shortsColor};    
-      }
-      > :first-child{
-        display: flex;
-        flex-direction: column;
-        box-sizing: border-box;
-        height: 70%;
-        width: 100%;
-        border-radius:50px 50px 0 0;
-        border: 1px solid #373737 ;
-        border-bottom: 0;
-        background-color: ${shirtColor};    
-      }
-    }
-    
-    .arm-left-top {
-        background: ${bodyColor};
-        transform: rotate(81deg);
-        top: 20px;
-        left: 0; 
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        animation: arm-left-top 1s infinite;
-        > div {
-          position: relative;
-          align-self: center;
-          margin-bottom: 15px;
-        }
-        > :first-child {
-          margin-bottom: 0;
-          height: 50%;
-          width: 120%;
-          background: ${shirtColor};
-          position: relative;
-          top: -2px;
-          border-radius: 50px 50px 0 0;
-          border-bottom: 1px solid #373737;
-        }
-    }
-    .arm-right-top {   
-        background: ${bodyColor};
-        top: 15px;
-        left: 50px;  
-        transform: rotate(-99deg);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        animation: arm-right-top 1s infinite;
-        > div {
-          position: relative;
-          align-self: center;
-          margin-bottom: 15px;
-        }
-        > :first-child {
-          margin-bottom: 0;
-          height: 50%;
-          width: 120%;
-          background: ${shirtColor};
-          border-radius: 50px 50px 0 0;
-          border-bottom: 1px solid #373737;
-          position: relative;
-          top: -2px;
-        }
-    }
-    .arm-left-bottom {
-        animation: arm-left-bottom 1s infinite;
-        transform: rotate(15deg);
-        top: -15px;
-        left: -15px;
-        background: ${bodyColor};
-        width: 30px;
-        border: 0;
-        border-radius: 50px;
+    z-index: 1000;
+    > svg {
         position: absolute;
-    }
-    .arm-right-bottom {     
-        animation: arm-right-bottom 1s infinite;
-        transform: rotate(-15deg);
-        top: -15px;
-        left: -15px;
-        background: ${bodyColor};
-        width: 30px;
-        border: 0;
-        border-radius: 50px;
-        position: absolute;
-    }
-    .foot-left-top {
-        animation: foot-left-top 1s infinite;
-        background: ${bodyColor};
-        width: 30px;
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        z-index: 95;
-        > div {
-          position: relative;
-          align-self: center;
-          margin-bottom: 15px;
-        }
-        transform: rotate(30deg);
-        > :first-child {
-          height: 50%;
-          width: 120%;
-          background: ${shortsColor};
-          border-radius: 50px 50px 0 0;
-          border-bottom: #6f6f6f solid 1px;
-        }
         top: 30px;
-        left: 10px;
+        left: 50px;
     }
-    .foot-right-top {
-        animation: foot-right-top 1s infinite;
-        background: ${bodyColor};
-        width: 30px;
-        transform: rotate(-30deg);
-        top: 30px;
-        left: 40px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        z-index: 90;
-        > div {
-          position: relative;
-          align-self: center;
-          margin-bottom: 15px;
-        }
-        > :first-child {
-          height: 50%;
-          width: 120%;
-          background: ${shortsColor};
-          border-radius: 50px 50px 0 0;
-          border-bottom: #6f6f6f solid 1px;
-          position: relative;
-          top: -1px
-        }
-    }
-    .foot-left-bottom {
-        animation: foot-left-bottom 1s infinite;
-        top:-15px;
-        left: -15px;
-        transform: rotate(30deg);
-        background: ${bodyColor};
-        width: 30px;
-        border: 0;
-        border-radius: 50px;
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        padding-bottom: 15px;
-        > div {
-          position: relative;
-          top: -15px;
-          left: -15px;
-          width: 0;
-          height: 0;
-          align-self: center;
-        }
-    }
-    .foot-right-bottom {
-        animation: foot-right-bottom 1s infinite;
-        top:-15px;
-        left: -15px;
-        transform: rotate(30deg);
-        background: ${bodyColor};
-        width: 30px;
-        border: 0;
-        border-radius: 50px;
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        padding-bottom: 15px;
-        > div {
-          position: relative;
-          top: -15px;
-          left: -15px;
-          width: 0;
-          height: 0;
-          align-self: center;
-        }
-    }
-    .ream {
-      width: 30px;
-      height: 50px;
-      border-radius: 50%;
-      border: 0;
-      background-color: ${bodyColor};
-      transform: rotate(-90deg);
-      transform-origin: 50% 15px;
-      
-    }
-    
-    .ream-left {
-      animation: ream-left 1s infinite;
-    }
-    .ream-right {
-      animation: ream-right 1s infinite;
-    }
-    
-    
 `;
-
 
 function Human() {
     return (
         <Main>
-            <Container className='start'>
-                <Smile>
-                    <div className='right'>
-                        <div>
-                            <div/>
-                        </div>
-                    </div>
-                    <div className='left'>
-                        <div>
-                            <div/>
-                        </div>
-                    </div>
-                    <div className='mouth'/>
-                </Smile>
-            </Container>
-            <Decoration>
-                <div className='body'>
-                    <div>
-                        <div className='arm arm-left-top'>
-                            <div/>
-                            <div>
-                                <div className='arm arm-left-bottom'/>
-                            </div>
-                        </div>
+            <svg width="540" height="603" viewBox="0 0 540 603" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M174.694 120.963L181.219 121.61L203.424 123.821L239.27 127.385L242.84 85.4815C243.179 81.5425 242.797 77.57 241.714 73.7911C240.631 70.0122 238.87 66.5013 236.531 63.4592C234.191 60.4171 231.32 57.9037 228.081 56.0626C224.842 54.2216 221.299 53.0892 217.655 52.7302C209.861 51.9474 202.039 53.8594 195.314 58.1908C188.59 62.5222 183.311 69.0494 180.238 76.832L180.233 76.8457C178.722 80.6768 177.773 84.7395 177.422 88.8869L174.694 120.963Z"
+                    fill="#2F2E41"/>
+                <path
+                    d="M201.986 102.56C201.986 102.56 204.588 125.999 201.986 126.937C199.384 127.874 190.712 131.625 190.712 131.625L206.323 149.439L228.871 150.376L234.075 132.562L228.871 127.874L227.137 104.435L201.986 102.56Z"
+                    fill="#FFB8B8"/>
+                <path
+                    d="M216.296 112.404C227.792 112.404 237.111 102.33 237.111 89.9024C237.111 77.4749 227.792 67.4005 216.296 67.4005C204.801 67.4005 195.482 77.4749 195.482 89.9024C195.482 102.33 204.801 112.404 216.296 112.404Z"
+                    fill="#FFB8B8"/>
+                <path
+                    d="M181.219 121.61C183.249 124.195 185.938 126.074 188.951 127.013C191.964 127.952 195.166 127.91 198.157 126.89C201.147 125.871 203.793 123.92 205.763 121.282C207.732 118.645 208.938 115.437 209.229 112.062C191.692 101.323 197.416 86.8723 212.737 70.8816C213.026 67.4812 212.373 64.0647 210.861 61.0667C209.349 58.0687 207.046 55.6248 204.245 54.0461C198.926 55.6703 194.01 58.5593 189.856 62.5016C185.703 66.444 182.416 71.3402 180.238 76.832L180.233 76.8458L177.498 108.902C177.302 111.182 177.53 113.481 178.169 115.663C178.808 117.846 179.845 119.868 181.219 121.61Z"
+                    fill="#2F2E41"/>
+                <path
+                    d="M205.637 78.5507L237.572 79.3425L237.868 65.3767C235.338 61.4869 231.992 58.2997 228.104 56.0755L206.125 55.5349L205.637 78.5507Z"
+                    fill="#2F2E41"/>
+                <g id='rightArm'>
+                    <path id="rightArmTop"
+                          d="M168.163 145.688L161.265 210.009C161.238 210.257 161.224 210.493 161.231 210.743C161.309 213.674 162.373 233.082 176.836 218.819L183.34 152.645L168.163 145.688Z"
+                          fill="#FFB8B8"/>
 
-                        <div className='arm arm-right-top'>
-                            <div/>
-                            <div>
-                                <div className='arm arm-right-bottom'/>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div className='foot foot-left-top'>
-                            <div/>
-                            <div>
-                                <div className='foot foot-left-bottom'>
-                                    <div>
-                                        <div className='ream ream-left'/>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className='foot foot-right-top'>
-                            <div/>
-                            <div>
-                                <div className='foot foot-right-bottom'>
-                                    <div>
-                                        <div className='ream ream-right'/>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </Decoration>
+                    <path id="rightArmBottom"
+                          d="M161 213.5L151.685 274.137C151.685 274.137 143.879 306.014 158.623 305.077C173.366 304.139 162.959 272.261 162.959 272.261L176.836 216.944L161 213.5Z"
+                          fill="#FFB8B8"/>
+                </g>
+                <g id='leftArm'>
+                    <path id="leftArmTop"
+                          d="M260.96 146.626L267.031 213.194C267.031 213.194 271.368 221.088 267.031 229.527C262.695 237.965 250.553 224.445 250.553 224.445L247.951 183.191L250.553 141.938L260.96 146.626Z"
+                          fill="#FFB8B8"/>
+                    <path id="leftArmBottom"
+                          d="M267.689 214.291L303.502 250.564C303.502 250.564 327.009 263.499 322.732 271.972C318.455 280.446 294.015 258.143 294.015 258.143L251.29 225.676L267.689 214.291Z"
+                          fill="#FFB8B8"/>
+                </g>
+                <g id='leftFoot'>
+                    <path id='leftHip'
+                          d="M216.413 258C216.413 258 198.885 255.517 204.481 296.512C210.077 337.507 203.906 372.952 203.906 372.952C203.906 372.952 198.628 384.143 209.986 389.501L224.638 389.987C224.638 389.987 235.744 378.639 236.237 365.395C236.73 352.152 248.978 293.657 248.978 293.657C248.978 293.657 256.143 274.402 241.8 267.637C235.955 259.697 216.413 258 216.413 258Z"
+                          fill="#2F2E41"/>
+                    <g id='leftFootBottom'>
+                        <path id='leftAnkle'
+                              d="M190.771 470.3C190.771 470.3 178.629 492.802 184.7 495.615C190.771 498.427 208.116 506.866 208.116 506.866C208.116 506.866 233.709 516.58 232.842 508.142C231.974 499.703 222.86 495.615 222.86 495.615C222.86 495.615 208.171 479.676 208.577 474.05C208.983 468.425 190.771 470.3 190.771 470.3Z"
+                              fill="#2F2E41"/>
+                        <path id='leftShin'
+                              d="M205.112 371.676C205.112 371.676 178.355 428.537 184.9 459.028L184.495 477.27L208.825 473.583C208.825 473.583 202.771 428.981 226.321 388.113C226.321 388.113 229.658 378.316 223.59 370.547C217.522 362.777 205.112 371.676 205.112 371.676Z"
+                              fill="#2F2E41"/>
+                    </g>
+                </g>
+                <path
+                    d="M184.161 253.174C184.161 253.174 174.509 278.641 184.161 293.49H231.861V294.428C231.861 294.428 226.657 340.369 231.861 293.49C231.861 293.49 237.064 306.616 231.861 294.428L249.206 293.49C249.206 293.49 254.409 257.862 245.737 253.174C237.064 248.487 184.161 253.174 184.161 253.174Z"
+                    fill="#2F2E41"/>
+                <g id='rightFoot'>
+                    <path id="rightHip"
+                          d="M189.428 276.614C189.428 276.614 172.517 281.846 195.065 316.536C217.614 351.226 227.154 385.917 227.154 385.917C227.154 385.917 227.154 398.291 239.712 398.291L253.172 392.48C253.172 392.48 258.376 377.479 253.172 365.29C247.969 353.102 234.092 294.972 234.092 294.972C234.092 294.972 232.359 274.5 216.5 274.5C207.827 269.812 189.428 276.614 189.428 276.614Z"
+                          fill="#2F2E41"/>
+                    <g id='rightFootBottom'>
+                        <path id="rightAnkle"
+                              d="M263.996 466.734C263.996 466.734 283.076 484.548 294.35 486.423C305.625 488.298 305.625 496.737 292.616 498.612C292.616 498.612 266.598 509.863 250.12 501.425V477.985L263.996 466.734Z"
+                              fill="#2F2E41"/>
+                        <path id="rightShin"
+                              d="M228.438 380.477C228.438 380.477 226.703 443.294 244.916 468.609L251.854 485.486L272.669 472.359C272.669 472.359 249.252 433.919 254.456 387.04C254.456 387.04 253.589 376.726 244.916 372.039C236.243 367.351 228.438 380.477 228.438 380.477Z"
+                              fill="#2F2E41"/>
+                    </g>
+                </g>
+                <path
+                    d="M199.384 132.562L202.42 126.468C202.42 126.468 161.225 141.938 165.561 149.439C169.897 156.939 182.039 168.19 182.039 168.19V183.191C182.039 183.191 195.048 226.32 182.039 250.697C169.03 275.074 253.155 267.574 250.553 250.697C247.951 233.821 244.482 216.007 247.951 207.569C251.42 199.13 257.491 189.755 252.288 167.253L265.297 152.251C265.297 152.251 260.96 137.25 249.686 134.437C238.411 131.625 229.305 128.343 229.305 128.343C229.305 128.343 234.942 140.063 225.402 141C215.863 141.938 199.384 132.562 199.384 132.562Z"
+                    fill="#6C63FF"/>
+            </svg>
         </Main>
     );
 }

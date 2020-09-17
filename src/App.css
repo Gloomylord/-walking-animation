@@ -9,7 +9,8 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: burlywood;
+  background: linear-gradient(14deg, #339e33 10%, #5cac12 40%,#008000,
+  #eab531, #e0bc09,#eab531, #006d80, #002080);
   box-sizing: border-box;
   overflow: hidden;
 }

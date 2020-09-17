@@ -1,0 +1,121 @@
+svg {
+     z-index: 1000;
+}
+
+#leftArm {
+    transform-box: fill-box;
+    transform-origin: 20% 10%;
+    animation: leftArm 1s ease-in-out infinite alternate;
+}
+
+#leftArmBottom {
+    transform-box: fill-box;
+    transform-origin: 10% 10%;
+    animation: leftArm 1s ease-in-out infinite alternate;
+}
+
+#rightArm {
+    transform-box: fill-box;
+    transform-origin: center 10%;
+    animation: leftArm 1s ease-in-out infinite alternate-reverse;
+}
+
+#rightArmBottom {
+    transform-box: fill-box;
+    transform-origin: 20% 0;
+    animation: rightArmBottom 1s ease-in-out infinite alternate;
+}
+
+#rightFoot {
+    transform-box: fill-box;
+    transform-origin: 20% 10%;
+    animation: rightFoot 1.1s linear infinite alternate;
+}
+
+#rightFootBottom {
+    transform-box: fill-box;
+    transform-origin: 20% 10%;
+    animation: rightFootBottom 1.1s linear infinite alternate;
+}
+
+#leftFoot {
+    transform-box: fill-box;
+    transform-origin: 90% 10%;
+    animation: leftFoot 1.1s linear infinite alternate;
+}
+
+#leftFootBottom {
+    transform-box: fill-box;
+    transform-origin: 90% 10%;
+    animation: leftFootBottom 1.1s linear infinite alternate-reverse;
+}
+
+#leftAnkle {
+    transform-box: fill-box;
+    transform-origin: 20% 10%;
+    animation: leftAnkle 1.1s linear infinite alternate;
+}
+
+
+@keyframes leftArm {
+    0%{
+        transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotateZ(30deg);
+    }
+}
+
+@keyframes rightArmBottom {
+    0%{
+        transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotateZ(-30deg);
+    }
+}
+
+@keyframes rightFoot {
+    0%{
+        transform: rotateZ(-15deg);
+    }
+    100% {
+        transform: rotateZ(45deg) translatex(-10px);
+    }
+}
+
+@keyframes rightFootBottom {
+    0%{
+        transform: rotateZ(0);
+    }
+    100% {
+        transform: translateX(3px) rotateZ(30deg) ;
+    }
+}
+
+@keyframes leftFoot {
+    0%{
+        transform:  translate(2px,0px) rotateZ(15deg);
+    }
+    100% {
+        transform: translate(2px,0px)  rotateZ(-45deg) ;
+    }
+}
+
+@keyframes leftFootBottom {
+    0%{
+        transform: rotateZ(0);
+    }
+    100% {
+        transform: translate(3px,3px) rotateZ(30deg) ;
+    }
+}
+
+@keyframes leftAnkle {
+    0%{
+        transform: rotateZ(-10deg);
+    }
+    100%{
+        transform: rotateZ(20deg) translate(-5px,-20px);
+    }
+}
